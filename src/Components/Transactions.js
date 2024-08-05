@@ -8,6 +8,17 @@ const Transactions= ({onSubmit})=> {
     const [description, setDescription] = useState('');
     const [amount, setAmount] = useState('');
 
+   
+    
+//     //function to handle form submit
+//     const handleSubmit = (e) => {
+//     e.preventDefault();//prevents default form behavior
 
+//     //calls onSubmit prop with the current state values
+//     onSubmit({category, description, amount});
+//     setCategory('');
+//     setDescription('');
+//     setAmount('');
+// }
     
 }
