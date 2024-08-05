@@ -8,8 +8,11 @@ const Filter = ({onFilter})=>{
         onFilter(e.target.value);//current value of the input field
     }
 
-//     //return JSX element
-//     return (
-//         <input type="text" placeholder="Search Transactions" onChange={handleFilterChange} />
-//     )
-// }
+    //return JSX element
+    return (
+        <input type="text" 
+        placeholder="Search Transactions"
+         onChange={handleFilterChange}  />
+    );
+};
+export default Filter;
