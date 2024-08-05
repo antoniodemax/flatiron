@@ -21,39 +21,40 @@ const Transactions= ({onSubmit})=> {
     setAmount('');
 }
 
-// //return form element with onSubmit event handler
-// return (
-//     <form onSubmit={handleSubmit}>
+//return form element with onSubmit event handler
+return (
+    <form onSubmit={handleSubmit}>
         
-//         <input type="text"
-//         placeholder="Date"
-//         value={date}
-//         onChange={(e) => setDate(e.target.value)}
-//         />
+        <input type="text"
+        placeholder="Date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+        />
 
-//         <input type="text"
-//         placeholder="Input Category"
-//         value={category}
-//         onChange={(e) => setCategory(e.target.value)}
-//         />
+        <input type="text"
+        placeholder="Input Category"
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        />
 
-//         <input type="text"
-//         placeholder="Description"
-//         value={description}
-//         onChange={(e) => setDescription(e.target.value)}
-//         />
+        <input type="text"
+        placeholder="Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        />
 
-//         <input type="text"
-//         placeholder="Amount"
-//         value={amount}
-//         onChange={(e) => setAmount(e.target.value)}
-//         />
+        <input type="text"
+        placeholder="Amount"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+        />
+        
+        {/*triggers the handleSubmit function*/}
+        <button type="submit">Add Transaction</button>
 
-//         <button type="submit">Add Transaction</button>
-
-//     </form>
-// );
+    </form>
+);
     
-// };
+};
 
 export default Transactions;
