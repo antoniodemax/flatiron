@@ -3,6 +3,8 @@ import React from "react";
 //functional component that accepts a prop when called onFilter
 const Filter = ({onFilter})=>{
     const handleFilterChange = (e) =>{
-        onFilter(e.target.value);
+
+        //notifies the parent component regarding the filter changes
+        onFilter(e.target.value);//current value of the input field
     }
 }
