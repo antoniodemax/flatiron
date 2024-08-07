@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 0.3em;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: start;
 }
 
 .App-logo {
@@ -48,4 +54,37 @@
   padding: 8px;
   text-align: center;
 
+}
+.header + .form, .form + .table {
+  margin-top: 40px;
+}
+
+.header h1 {
+  margin: 0;
+  background-color: #61dafb;
+  padding: 10px;
+  text-align: center;
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form input[type="date"], .form input[type="text"] .form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+}
+
+.SearchInput{
+  width: 100%;
+  padding: 0.9em 0.5em;
+  border-radius: 8px;
+  border: 1px, solid green;
 }

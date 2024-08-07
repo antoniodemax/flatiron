@@ -4,6 +4,7 @@ import React, {useState} from "react";
 const Transactions= ({onSubmit})=> {
 
     //initialized the state variables
+    // const [date, setDate] =useState(new Date());
     const [category, setCategory] = useState('');
     const [description, setDescription] = useState('');
     const [amount, setAmount] = useState('');
@@ -15,13 +16,13 @@ const Transactions= ({onSubmit})=> {
     e.preventDefault();//prevents default form behavior
 
     //calls onSubmit prop with the current state values
-    onSubmit({category, description, amount});
+    onSubmit({category, description, amount, date});
     setCategory('');
     setDescription('');
     setAmount('');
 }
 
-const [date, setDate] =useState([])
+ const [date, setDate] =useState([])
 
 //return form element with onSubmit event handler
 return (
