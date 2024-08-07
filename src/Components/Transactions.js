@@ -21,6 +21,8 @@ const Transactions= ({onSubmit})=> {
     setAmount('');
 }
 
+const [date, setDate] =useState([])
+
 //return form element with onSubmit event handler
 return (
     <form onSubmit={handleSubmit}>

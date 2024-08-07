@@ -1,33 +1,38 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import Transactions from "./Components/Transactions";
 import Filter from "./Components/Filter";
+import Table from "./Components/Table";
+import Data from "./db.json"
 
 
-function App () {
-  const [transactions, setTransactions] = useState([]);
+function App() {
+  const [transactions, setTransactions] = useState(Data.transactions);
   const [filterTerm, setFilterTerm] = useState('');
 
-  const handleAddTransaction = (newTransaction)=>{
+  useEffect(() => {
+    // No need to fetch Data, it's already imported
+  }, []);
+
+  const handleAddTransaction = (newTransaction) => {
     setTransactions([...transactions, newTransaction]);
+  };
 
-};
+  const handleFilterTransactions = (term) => {
+    setFilterTerm(term);
+  };
 
-const handleFilterTransactions = (term) => {
-  setFilterTerm(term);
-};
+  const filteredTransactions = transactions.filter((transaction) => 
+    transaction.description.toLowerCase().includes(filterTerm.toLowerCase())
+  );
 
-const filteredTransactions = transactions.filter((transaction) => transaction.description.toLowerCase())
-};
+  return (
+    <div>
+      <h1>Flatiron Bank</h1>
+      <Transactions onSubmit={handleAddTransaction} />
+      <Filter onFilter={handleFilterTransactions} />
+      <Table transactions={filteredTransactions} />
+    </div>
+  );
+}
 
-return (
-  <div>
-    <h1>Flatiron Bank</h1>
-    {/*renders the transaction component and passes the handleAddTransaction function as a prop*/}
-    <Transaction onSubmit={handleAddTransaction} />
-        
-        {/*renders the filter component and passes the handleFilterTransactions function as a prop*/}
-        <Filter onFilter={handleFilterTransactions} />
-
-            {/*renders the table component and passes the filteredTransactions array as a prop*/}
-            <Table transactions={filteredTransactions} />
-  </div>
-)
+export default App;
