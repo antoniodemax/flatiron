@@ -28,6 +28,8 @@ function App() {
     transaction.description.toLowerCase().includes(filterTerm.toLowerCase())
   );
 
+
+  //render the app component
   return (
     <div>
       <h1>Flatiron Bank</h1>
