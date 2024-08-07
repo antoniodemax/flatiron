@@ -10,7 +10,10 @@ function App() {
   const [filterTerm, setFilterTerm] = useState('');
 
   useEffect(() => {
-    // No need to fetch Data, it's already imported
+    fetch(Data)
+    // .then(response => response.json)
+    // .then(data =>setTransactions(data));
+
   }, []);
 
   const handleAddTransaction = (newTransaction) => {
