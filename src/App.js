@@ -8,15 +8,16 @@ function App() {
   const [transactions, setTransactions] = useState(Data.transactions);
   const [filterTerm, setFilterTerm] = useState("");
 
-  
-  // useEffect(() => {
-  //   fetch(Data)
-  //     .then((response) => response.json())
-  //     .then((data) => setTransactions(data.transactions));
-  //     .catch(error =>{
-  //       console.log('Error', error)
-  //     })
-  // }, []);
+  useEffect(() => {
+    fetch('https://flatiron-backend.vercel.app/transactions')
+      .then((response) => response.json())
+      .then((data) => {
+        if (data && data.transactions) {
+          setTransactions(data.transactions);
+        }
+      })
+      .catch((error) => console.error('Error:', error));
+  }, []);
 
   const handleAddTransaction = (newTransaction) => {
     setTransactions([...transactions, newTransaction]);
